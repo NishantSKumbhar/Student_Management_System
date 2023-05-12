@@ -32,7 +32,7 @@
             this.LBL_form1 = new System.Windows.Forms.Label();
             this.lbl_Header = new System.Windows.Forms.Label();
             this.tb_FirstName = new System.Windows.Forms.TextBox();
-            this.btn_Submit = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
             this.btn_Refresh = new System.Windows.Forms.Button();
             this.btn_ViewStudentList = new System.Windows.Forms.Button();
             this.tb_LastName = new System.Windows.Forms.TextBox();
@@ -70,21 +70,21 @@
             // 
             this.tb_FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_FirstName.Location = new System.Drawing.Point(365, 101);
+            this.tb_FirstName.MaxLength = 40;
             this.tb_FirstName.Name = "tb_FirstName";
             this.tb_FirstName.Size = new System.Drawing.Size(203, 26);
             this.tb_FirstName.TabIndex = 1;
-            this.tb_FirstName.TextChanged += new System.EventHandler(this.tb_FirstName_TextChanged);
             // 
-            // btn_Submit
+            // btn_Save
             // 
-            this.btn_Submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Submit.Location = new System.Drawing.Point(365, 398);
-            this.btn_Submit.Name = "btn_Submit";
-            this.btn_Submit.Size = new System.Drawing.Size(90, 40);
-            this.btn_Submit.TabIndex = 7;
-            this.btn_Submit.Text = "Save";
-            this.btn_Submit.UseVisualStyleBackColor = true;
-            this.btn_Submit.Click += new System.EventHandler(this.btn_Submit_Click);
+            this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Save.Location = new System.Drawing.Point(365, 398);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(90, 40);
+            this.btn_Save.TabIndex = 7;
+            this.btn_Save.Text = "Save";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_Refresh
             // 
@@ -112,10 +112,10 @@
             // 
             this.tb_LastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_LastName.Location = new System.Drawing.Point(365, 154);
+            this.tb_LastName.MaxLength = 40;
             this.tb_LastName.Name = "tb_LastName";
             this.tb_LastName.Size = new System.Drawing.Size(203, 26);
             this.tb_LastName.TabIndex = 2;
-            this.tb_LastName.TextChanged += new System.EventHandler(this.tb_LastName_TextChanged);
             // 
             // label1
             // 
@@ -131,10 +131,10 @@
             // 
             this.tb_RollNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_RollNo.Location = new System.Drawing.Point(365, 200);
+            this.tb_RollNo.MaxLength = 5;
             this.tb_RollNo.Name = "tb_RollNo";
             this.tb_RollNo.Size = new System.Drawing.Size(203, 26);
             this.tb_RollNo.TabIndex = 3;
-            this.tb_RollNo.TextChanged += new System.EventHandler(this.tb_RollNo_TextChanged);
             // 
             // label2
             // 
@@ -150,10 +150,10 @@
             // 
             this.tb_MobileNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_MobileNo.Location = new System.Drawing.Point(365, 250);
+            this.tb_MobileNo.MaxLength = 10;
             this.tb_MobileNo.Name = "tb_MobileNo";
             this.tb_MobileNo.Size = new System.Drawing.Size(203, 26);
             this.tb_MobileNo.TabIndex = 4;
-            this.tb_MobileNo.TextChanged += new System.EventHandler(this.tb_MobileNo_TextChanged);
             // 
             // label3
             // 
@@ -190,7 +190,6 @@
             this.cmb_Courses.Name = "cmb_Courses";
             this.cmb_Courses.Size = new System.Drawing.Size(121, 24);
             this.cmb_Courses.TabIndex = 5;
-            this.cmb_Courses.SelectedIndexChanged += new System.EventHandler(this.cmb_Courses_SelectedIndexChanged);
             // 
             // btn_Logout
             // 
@@ -221,7 +220,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_ViewStudentList);
             this.Controls.Add(this.btn_Refresh);
-            this.Controls.Add(this.btn_Submit);
+            this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.tb_FirstName);
             this.Controls.Add(this.LBL_form1);
             this.Controls.Add(this.lbl_Header);
@@ -239,7 +238,7 @@
         private System.Windows.Forms.Label LBL_form1;
         private System.Windows.Forms.Label lbl_Header;
         private System.Windows.Forms.TextBox tb_FirstName;
-        private System.Windows.Forms.Button btn_Submit;
+        private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Button btn_Refresh;
         private System.Windows.Forms.Button btn_ViewStudentList;
         private System.Windows.Forms.TextBox tb_LastName;

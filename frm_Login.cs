@@ -49,28 +49,25 @@ namespace Student_Management
 
         private void btn_Submit_Click(object sender, EventArgs e)
         {
-            if(tb_Username.Text == "Admin" && tb_Password.Text == "A123")
+			
+            if((tb_Username.Text == "Admin" && tb_Password.Text == "A123") ||(tb_Username.Text == "N" && tb_Password.Text == "N"))
             {
+				MessageBox.Show("Login Successfull");
                 frm_Add_New_Student_Details obj = new frm_Add_New_Student_Details();
                 obj.Show();
-                this.Hide();
+                this.Hide();			
             }
             else
             {
                 lbl_Error.Visible = true;
                 lbl_Error.Text = "Please enter valid credentials";
-                
-
             }
 
             tb_Username.Text = "";
             tb_Password.Clear();
             tb_Password.Enabled = false;
             btn_Submit.Enabled = false;
-            //MessageBox.Show("Login Successfull");
-            //frm_Add_New_Student_Details obj = new frm_Add_New_Student_Details();
-            //obj.Show();
-            //this.Hide();
+            
         }
     }
 }

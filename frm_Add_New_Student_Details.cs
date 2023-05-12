@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,25 @@ namespace Student_Management
             InitializeComponent();
         }
 
-        public void clear_controls()
+        SqlConnection Con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Student_Management_DB;Integrated Security=True");
+
+        void Con_Open()
+        {
+            if (Con.State != ConnectionState.Open)
+            {
+                Con.Open();
+            }
+        }
+
+        void Con_Close()
+        {
+            if (Con.State != ConnectionState.Closed)
+            {
+                Con.Close();
+            }
+        }
+
+        void clear_controls()
         {
             tb_FirstName.Clear();
             tb_LastName.Clear();
@@ -25,6 +44,7 @@ namespace Student_Management
             tb_RollNo.Clear();
             cmb_Courses.SelectedIndex = -1;
 
+            tb_FirstName.Focus();
         }
 
         private void frm_Add_New_Student_Details_Load(object sender, EventArgs e)
@@ -33,39 +53,7 @@ namespace Student_Management
             tb_FirstName.Focus();
         }
 
-        private void tb_FirstName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tb_LastName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tb_RollNo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tb_MobileNo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmb_Courses_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         
-
-        private void btn_Submit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
 
         private void btn_Logout_Click(object sender, EventArgs e)
         {
@@ -81,7 +69,39 @@ namespace Student_Management
 
         private void btn_ViewStudentList_Click(object sender, EventArgs e)
         {
+            frm_Student_List obj = new frm_Student_List();
+            obj.Show();
 
+            this.Hide();
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            Con_Open();
+
+            if (tb_FirstName.Text != "" && tb_LastName.Text != "" && tb_MobileNo.Text != "" && tb_RollNo.Text != "" && cmb_Courses.Text != "")
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "insert into Student_Details (Roll_No, First_Name, Last_Name, Mobile_No, Course) values (@RNo, @FName, @LName, @MNo, @Course)";
+                cmd.Connection = Con;
+
+                cmd.Parameters.Add("RNo", SqlDbType.Int).Value = tb_RollNo.Text;
+                cmd.Parameters.Add("FName", SqlDbType.VarChar).Value = tb_FirstName.Text;
+                cmd.Parameters.Add("LName", SqlDbType.VarChar).Value = tb_LastName.Text;
+                cmd.Parameters.Add("MNo", SqlDbType.Decimal).Value = tb_MobileNo.Text;
+                cmd.Parameters.Add("Course", SqlDbType.NVarChar).Value = cmb_Courses.Text;
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Record insert successfully.");
+
+                clear_controls();
+            }   
+            else
+            {
+                MessageBox.Show("Fill out all fileds.");
+            }
+
+            Con_Close();
         }
     }
 }
