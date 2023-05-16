@@ -34,6 +34,9 @@ namespace Student_Management
         private void frm_Student_List_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'student_Management_DBDataSet.Student_Details' table. You can move, or remove it, as needed.
+
+            lbl_UserName.Text = SharedContent.Username;
+
             this.student_DetailsTableAdapter.Fill(this.student_Management_DBDataSet.Student_Details);
 
         }

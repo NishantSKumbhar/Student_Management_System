@@ -49,6 +49,7 @@ namespace Student_Management
 
         private void frm_Add_New_Student_Details_Load(object sender, EventArgs e)
         {
+            lbl_UserName.Text = SharedContent.Username;
             clear_controls();
             tb_FirstName.Focus();
         }
@@ -103,5 +104,7 @@ namespace Student_Management
 
             Con_Close();
         }
+
+        
     }
 }

@@ -33,17 +33,18 @@
             this.btn_Add_Student = new System.Windows.Forms.Button();
             this.lbl_Header = new System.Windows.Forms.Label();
             this.dgv_Student_List = new System.Windows.Forms.DataGridView();
-            this.student_Management_DBDataSet = new Student_Management.Student_Management_DBDataSet();
-            this.studentDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.student_DetailsTableAdapter = new Student_Management.Student_Management_DBDataSetTableAdapters.Student_DetailsTableAdapter();
             this.rollNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mobileNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.courseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.student_Management_DBDataSet = new Student_Management.Student_Management_DBDataSet();
+            this.student_DetailsTableAdapter = new Student_Management.Student_Management_DBDataSetTableAdapters.Student_DetailsTableAdapter();
+            this.lbl_UserName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Student_List)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.student_Management_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.student_Management_DBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Logout
@@ -101,20 +102,6 @@
             this.dgv_Student_List.Size = new System.Drawing.Size(801, 446);
             this.dgv_Student_List.TabIndex = 13;
             // 
-            // student_Management_DBDataSet
-            // 
-            this.student_Management_DBDataSet.DataSetName = "Student_Management_DBDataSet";
-            this.student_Management_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentDetailsBindingSource
-            // 
-            this.studentDetailsBindingSource.DataMember = "Student_Details";
-            this.studentDetailsBindingSource.DataSource = this.student_Management_DBDataSet;
-            // 
-            // student_DetailsTableAdapter
-            // 
-            this.student_DetailsTableAdapter.ClearBeforeFill = true;
-            // 
             // rollNoDataGridViewTextBoxColumn
             // 
             this.rollNoDataGridViewTextBoxColumn.DataPropertyName = "Roll_No";
@@ -155,11 +142,38 @@
             this.courseDataGridViewTextBoxColumn.Name = "courseDataGridViewTextBoxColumn";
             this.courseDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // studentDetailsBindingSource
+            // 
+            this.studentDetailsBindingSource.DataMember = "Student_Details";
+            this.studentDetailsBindingSource.DataSource = this.student_Management_DBDataSet;
+            // 
+            // student_Management_DBDataSet
+            // 
+            this.student_Management_DBDataSet.DataSetName = "Student_Management_DBDataSet";
+            this.student_Management_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // student_DetailsTableAdapter
+            // 
+            this.student_DetailsTableAdapter.ClearBeforeFill = true;
+            // 
+            // lbl_UserName
+            // 
+            this.lbl_UserName.AutoSize = true;
+            this.lbl_UserName.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.lbl_UserName.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_UserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbl_UserName.Location = new System.Drawing.Point(29, 38);
+            this.lbl_UserName.Name = "lbl_UserName";
+            this.lbl_UserName.Size = new System.Drawing.Size(132, 18);
+            this.lbl_UserName.TabIndex = 17;
+            this.lbl_UserName.Text = "Login User Name";
+            // 
             // frm_Student_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1028, 649);
+            this.Controls.Add(this.lbl_UserName);
             this.Controls.Add(this.dgv_Student_List);
             this.Controls.Add(this.btn_Logout);
             this.Controls.Add(this.btn_Add_Student);
@@ -168,8 +182,8 @@
             this.Text = "frm_Student_List";
             this.Load += new System.EventHandler(this.frm_Student_List_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Student_List)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.student_Management_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.student_Management_DBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,5 +203,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mobileNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn courseDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lbl_UserName;
     }
 }

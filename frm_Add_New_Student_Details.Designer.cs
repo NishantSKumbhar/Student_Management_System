@@ -44,6 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cmb_Courses = new System.Windows.Forms.ComboBox();
             this.btn_Logout = new System.Windows.Forms.Button();
+            this.lbl_UserName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LBL_form1
@@ -74,6 +75,7 @@
             this.tb_FirstName.Name = "tb_FirstName";
             this.tb_FirstName.Size = new System.Drawing.Size(203, 26);
             this.tb_FirstName.TabIndex = 1;
+            
             // 
             // btn_Save
             // 
@@ -203,12 +205,25 @@
             this.btn_Logout.UseVisualStyleBackColor = false;
             this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
             // 
+            // lbl_UserName
+            // 
+            this.lbl_UserName.AutoSize = true;
+            this.lbl_UserName.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.lbl_UserName.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_UserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbl_UserName.Location = new System.Drawing.Point(12, 30);
+            this.lbl_UserName.Name = "lbl_UserName";
+            this.lbl_UserName.Size = new System.Drawing.Size(132, 18);
+            this.lbl_UserName.TabIndex = 16;
+            this.lbl_UserName.Text = "Login User Name";
+            // 
             // frm_Add_New_Student_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_UserName);
             this.Controls.Add(this.btn_Logout);
             this.Controls.Add(this.cmb_Courses);
             this.Controls.Add(this.label4);
@@ -250,5 +265,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmb_Courses;
         private System.Windows.Forms.Button btn_Logout;
+        private System.Windows.Forms.Label lbl_UserName;
     }
 }

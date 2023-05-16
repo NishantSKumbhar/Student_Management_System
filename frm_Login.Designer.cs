@@ -47,7 +47,6 @@
             this.lbl_Header.Size = new System.Drawing.Size(151, 29);
             this.lbl_Header.TabIndex = 0;
             this.lbl_Header.Text = "Login Form";
-            this.lbl_Header.Click += new System.EventHandler(this.label1_Click);
             // 
             // LBL_form1
             // 
@@ -58,7 +57,6 @@
             this.LBL_form1.Size = new System.Drawing.Size(106, 20);
             this.LBL_form1.TabIndex = 1;
             this.LBL_form1.Text = "Username   :";
-            this.LBL_form1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // lbl_Password
             // 
@@ -69,12 +67,12 @@
             this.lbl_Password.Size = new System.Drawing.Size(103, 20);
             this.lbl_Password.TabIndex = 1;
             this.lbl_Password.Text = "Password   :";
-            this.lbl_Password.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // tb_Username
             // 
             this.tb_Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Username.Location = new System.Drawing.Point(349, 167);
+            this.tb_Username.MaxLength = 10;
             this.tb_Username.Name = "tb_Username";
             this.tb_Username.Size = new System.Drawing.Size(203, 26);
             this.tb_Username.TabIndex = 1;
@@ -92,6 +90,7 @@
             this.tb_Password.Size = new System.Drawing.Size(203, 26);
             this.tb_Password.TabIndex = 2;
             this.tb_Password.TextChanged += new System.EventHandler(this.tb_Password_TextChanged);
+            this.tb_Password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Password_KeyPress);
             // 
             // btn_Submit
             // 
@@ -134,7 +133,6 @@
             this.Name = "frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lexcrop Student Login Form";
-            this.Load += new System.EventHandler(this.frm_Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
